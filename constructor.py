@@ -24,15 +24,16 @@ class Item:
     def calDiscount(self):
         self.price=self.price*self.payRate
     def __repr__(self):
-        return (f"(Item('{self.name},{self.quantity},{self.price}')),")
-
+        return f"Item('{self.name}',{self.quantity},{self.price})"
+        #[Item('Phone',5,500), Item('Laptop',3,1000), Item('Cable',3,465), Item('Mouse',3,533), Item('Keyboard',3,465)]
 
 phone=Item("Phone",500,5)
 laptop=Item("Laptop",1000,3)
 cable=Item("Cable",465,3)
 mouse=Item("Mouse",533,3)
 keyboard=Item("Keyboard",465,3)
-print(phone,laptop,cable,mouse,keyboard)
+print(Item.all)
+#[Item('Phone',5,500), Item('Laptop',3,1000), Item('Cable',3,465), Item('Mouse',3,533), Item('Keyboard',3,465)]
 # __dict__ magic attriutes use korle class attribute insatance level e available hoy na
 
 #calculate phone discount price with diffrent payRate
