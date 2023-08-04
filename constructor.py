@@ -17,10 +17,22 @@ class Item:
     def calTotalPrice(self):
         return self.quantity*self.price
     def calDiscount(self):
-        self.price=self.price*Item.payRate
-phone=Item("Phone",300,5)
-laptop=Item("Laptop",500,3)
+        self.price=self.price*self.payRate
+phone=Item("Phone",500,5)
+laptop=Item("Laptop",1000,3)
 # __dict__ magic attriutes use korle class attribute insatance level e vailable hoy na
+
+#calculate phone discount price with diffrent payRate
+phone.payRate=0.7
 phone.calTotalPrice()
 phone.calDiscount()
-# print(phone.price) //after 20% discount 240
+print(phone.price)
+
+#calculate laptop discount price with another payRate
+laptop.payRate=0.6
+laptop.calTotalPrice()
+laptop.calDiscount()
+print(laptop.price)
+
+
+
