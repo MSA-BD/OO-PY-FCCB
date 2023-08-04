@@ -3,6 +3,11 @@
 
 class Item:
     def __init__(self,name: str,price: float=100,quantity: int=0):
+        #Run validation for constructor recieved arguments
+        assert len(name)>=3, f"Product name need at last 3 letter!"
+        assert price>=0,f"{price} can't be less than zero!"
+        assert quantity>=0, f"{quantity} will be at least 1 or grater than!"
+        #assign value for self object
         self.name=name
         self.price=price
         self.quantity=quantity
