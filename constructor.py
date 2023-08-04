@@ -4,6 +4,7 @@
 class Item:
     # class attributeses
     payRate=.8 # cal 20% discount
+    all=[]
     def __init__(self,name: str,price: float=100,quantity: int=0):
         #Run validation for constructor recieved arguments
         assert len(name)>=3, f"Product name need at last 3 letter!"
@@ -14,10 +15,16 @@ class Item:
         self.price=price
         self.quantity=quantity
         print(f"{name}, created in constructor method")
+
+        #Action to execute
+        Item.all.append(self)
+        #self means every instance
     def calTotalPrice(self):
         return self.quantity*self.price
     def calDiscount(self):
         self.price=self.price*self.payRate
+
+
 phone=Item("Phone",500,5)
 laptop=Item("Laptop",1000,3)
 # __dict__ magic attriutes use korle class attribute insatance level e vailable hoy na
@@ -33,6 +40,8 @@ laptop.payRate=0.6
 laptop.calTotalPrice()
 laptop.calDiscount()
 print(laptop.price)
+
+#__str__ vs __repr__
 
 
 
