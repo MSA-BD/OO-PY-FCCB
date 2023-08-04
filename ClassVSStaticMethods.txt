@@ -1,0 +1,16 @@
+# When to use @classmethod and when to use @staticmethod
+class Item:
+    @staticmethod
+    def isInteger(num):
+        pass
+    '''
+    should do something that has a direct relation with the class, But something that are unique per instance.
+    method e regular parametre thake
+    '''
+    @classmethod
+    def crateInstentiateFromCSV(cls):
+        '''
+        This should also do something that has direct relation with the class, Usually, those are used to manipulating
+        diffrenet structure of data to crate instance object like we have done CSV function.
+        method e mandetory parametre thake. CSV, YAML, JSON->instance object
+        '''
