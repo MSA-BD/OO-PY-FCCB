@@ -3,7 +3,7 @@
 
 class Item:
     # class attributeses
-    payRate=.8 # cal 20% discount
+    payRate=.8 # calculation 20% discount
     all=[]
     def __init__(self,name: str,price: float=100,quantity: int=0):
         #Run validation for constructor recieved arguments
@@ -14,7 +14,7 @@ class Item:
         self.name=name
         self.price=price
         self.quantity=quantity
-        print(f"{name}, created in constructor method")
+        # print(f"{name}, created in constructor method")
 
         #Action to execute
         Item.all.append(self)
@@ -23,23 +23,36 @@ class Item:
         return self.quantity*self.price
     def calDiscount(self):
         self.price=self.price*self.payRate
+    def __repr__(self):
+        return (f"(Item('{self.name},{self.quantity},{self.price}')),")
 
 
 phone=Item("Phone",500,5)
 laptop=Item("Laptop",1000,3)
-# __dict__ magic attriutes use korle class attribute insatance level e vailable hoy na
+cable=Item("Cable",465,3)
+mouse=Item("Mouse",533,3)
+keyboard=Item("Keyboard",465,3)
+print(phone,laptop,cable,mouse,keyboard)
+# __dict__ magic attriutes use korle class attribute insatance level e available hoy na
 
 #calculate phone discount price with diffrent payRate
-phone.payRate=0.7
-phone.calTotalPrice()
-phone.calDiscount()
-print(phone.price)
+# phone.payRate=0.7
+# phone.calTotalPrice()
+# phone.calDiscount()
+# print(phone.price)
 
 #calculate laptop discount price with another payRate
-laptop.payRate=0.6
-laptop.calTotalPrice()
-laptop.calDiscount()
-print(laptop.price)
+# laptop.payRate=0.6
+# laptop.calTotalPrice()
+# laptop.calDiscount()
+# print(laptop.price)
+
+# print 5 instances
+for instance in Item.all:
+    pass
+    # print(instance.name)
+
+
 
 #__str__ vs __repr__
 
